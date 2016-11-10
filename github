@@ -1,5 +1,0 @@
-#!/bin/bash
-#git remote add github  https://github.com/mrev11/hello-world.git
-
-git config branch.master.remote github
-git config branch.master.merge  refs/heads/master

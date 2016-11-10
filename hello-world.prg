@@ -1,6 +1,6 @@
 
 
 function main()
-    ? "Hello"
+    ? "My first GitHub project: Hello World!"
     ?
     

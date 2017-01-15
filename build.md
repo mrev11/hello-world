@@ -374,30 +374,31 @@ Az inkludált `parfile.bld` tartalma pedig:
 Az `-lmask` opció hatására készülni fog egy könyvtár, amibe belekerül
 az aktuális directory minden olyan programja, ami nem tartamaz main-t.
 
+A `BUILD_EXE` változó beállításával megadjuk azt a directoryt, ahová a Build 
+a friss exe-ket tenni fogja, jelen esetben a CCC standard exe directoryját.
+Enélkül az aktuális directoryban jönnének létre az exe-k. 
+A `$(CCCDIR)` és `$(CCCUNAME)` makrókat a Build 
+fogja értelmezni.  A Build egyformán megérti a `\` és `/` elválasztó 
+karakterrel leírt útvonalakat.
+
+
+
 Öt darab exe fog linkelődni. Ezek közül kettő (mask és page) fullscreen
 karakteres képernyőkezeléssel működik, másik három (msk2say, msk2pge, msk2wro)
 pedig egyszerű parancssoros program lesz.
 
 > Megjegyzés: Ha minden programunk ugyanolyan típusú volna, akkor nem kéne
 > megadni a -x opciókat, hiszen a Build maga is ki tudja keresni a főprogramokat.
-> A -x-ra éppen azért van szükség, hogy amikor a Build a fullscreen programokat
-> készíti, akkor ne vegye figyelembe a -x-ben nem felsorolt modulokat. 
+> A -x-re éppen azért van szükség, hogy a Build ne vegye figyelembe a -x-ben 
+> nem felsorolt modulokat. 
 
-A `BUILD_EXE` változó beállításával megadjuk azt a directoryt, ahová a Build 
-a friss exe-ket tenni fogja, jelen esetben a CCC standard exe directoryját.
-Enélkül az aktuális directoryban jönnének létre az exe-k. 
-
-
-Az előbbi `parfile.bld` paraméterfájl Windowson is megfelel, az `m` 
-script windowsos megfelelője `m.bat`, nagyon hasonló a UNIX-os változathoz:
+A `parfile.bld` paraméterfájl Windowson és Linuxon egyformán megfelel, 
+az `m` script windowsos megfelelője `m.bat`, nagyon hasonló a linuxos változathoz:
     
     @echo off
     bapp_w32c  -xmask -xpage  @parfile.bld
     bapp_w32_  -xmsk2say -xmsk2pge -xpge2wro  @parfile.bld
     
-A paraméterfájlban előforduló `$(CCCDIR)` és `$(CCCUNAME)` makrókat a Build 
-fogja értelmezni.  A Build egyformán megérti a `\` és `/` elválasztó karakterrel 
-leírt útvonalakat.
 
 Végeredményben két nagyon rövid, egymáshoz nagyon hasonló scriptet kell csak
 megírni, ezután bármely platformon az egybetűs `m` parancs hatására elkészül

@@ -6,23 +6,25 @@ _Dr. Vermes Mátyás_
 2009\. december
 
 
-1  Bevezetés  
-2  Telepítés  
-3  Hello World  
-4  Változók  
-5  Függvényhívás  
-6  Objektumok  
-7  Kivételkezelés  
-8  Többszálúság  
-9  Unicode  
-A  Régebbi dokumentációk  
+[1  Bevezetés](#sec1)  
+[2  Telepítés](#sec2)  
+[3  Hello World](#sec3)    
+[4  Változók](#sec4)  
+[5  Függvényhívás](#sec5) 
+[6  Objektumok](#sec6)  
+[7  Kivételkezelés](#sec7)  
+[8  Többszálúság](#sec8)  
+[9  Unicode](#sec9)  
+[A  Régebbi dokumentációk](#secA)  
     A.1  [Eredeti Clipper doksi](http://ccc.comfirm.hu/pub/ng)   
     A.2  [CCC projekt manager](http://ccc.comfirm.hu/ccc3/build.html)   
     A.3  [Jáva terminál](http://ccc.comfirm.hu/ccc3/jterminal.html)   
     A.4  [SQL2 interfész](http://ccc.comfirm.hu/ccc3/sql2.html)   
     A.5  [GTK interfész](http://ccc.comfirm.hu/ccc3/cccgtk.html)   
 
-##  1.  Bevezetés
+
+
+##  1.  Bevezetés<a name="sec1"></a>
 
 A Clipper praktikus, egyszerű, általános célra használható eszköz volt. Nem
 véletlen a rendkívüli népszerűség, amire a maga idejében szert tett. A DOS-
@@ -74,7 +76,7 @@ meghaladó, új részekre fókuszálok, ezen belül is elsősorban magára a nye
 belinkeltem néhány régi doksit. A Clipper eredeti HTML leírása egyes részeiben
 még mindig használható.
 
-##  2.  Telepítés
+##  2.  Telepítés<a name="sec2"></a>
 
 A CCC többféle rendszeren fut: Windowson MinGW vagy Microsoft-C fordítóval.
 Különféle Linuxokon, BSD-ken, Solarison GCC fordítóval. Mi most az Ubuntu
@@ -214,7 +216,7 @@ Időről időre mégis megjelennek warningok, ez amiatt van, hogy a C++ fordít�
 ellenőrzéseit szigorítják. A CCC karbantartása során ezek rendszeresen
 javításra kerülnek.
 
-##  3.  Hello World
+##  3.  Hello World<a name="sec3"></a>
 
 Készítünk egy directoryt, mondjuk `$HOME/temp/hello`, és abban egy `hello.prg`
 nevű fájlt.
@@ -304,7 +306,7 @@ Végül, szokássá vált, hogy a build-et indító parancsot (script nevet) be�
 egy `m` nevű fájlba (scriptbe). A CCC programkészítés így az egybetűs `m`
 (make) parancsra indul.
 
-##  4.  Változók
+##  4.  Változók<a name="sec4"></a>
 
 ###  4.1.  Deklaráció
 
@@ -1341,7 +1343,7 @@ feladatok, robotvezérlés, effélék, ahol semmilyen szünet nem megengedhető,
 ilyesmire a CCC nem alkalmas. (Egyébként a Jáva licencében is leírják, hogy
 atomerőművek és repülőgépek vezérlésére nem jó.)
 
-##  5.  Függvényhívás
+##  5.  Függvényhívás<a name="sec5"></a>
 
 ###  5.1.  Független modulok
 
@@ -2026,7 +2028,7 @@ Amikor a függvényhívás operátort nem közvetlenül követi a függvénynév
 ahogy a példában egy balzárójel ékelődik `::=` és `val` közé), akkor az üres
 zárójelpárt nem lehet elhagyni.
 
-##  6.  Objektumok
+##  6.  Objektumok<a name="sec6"></a>
 
 ###  6.1.  Alapok
 
@@ -2782,7 +2784,7 @@ között. A fordítóprogram egyébként úgy működik, hogy a `class` definíc
 belsőleg előállítja a függvényinterfész kódot, és azt a szokásos módon
 lefordítja.
 
-##  7.  Kivételkezelés
+##  7.  Kivételkezelés<a name="sec7"></a>
 
 ###  7.1.  Mikor kapunk el kivételt?
 
@@ -3197,7 +3199,7 @@ A `begin...recover` és `break` működését tanulmányozhatjuk kikapcsolt
 hibakezelés mellett, ha a `fuggveny2`-ben megszüntetjük az `errorblock()`
 hívás kikommentezését.
 
-##  8.  Többszálúság
+##  8.  Többszálúság<a name="sec8"></a>
 
 ###  8.1.  Pthread API
 
@@ -3226,7 +3228,7 @@ rendelkezésre szálak indítására és szinkronizálására:
 A CCC szintre kivezetett egyszerűsített pthread API CCC-ből ugyanúgy működik,
 mint C-ből. Nincs értelme most referenciaszerű leírást adni róla, mert több
 ilyen található az interneten. [Itt van pl. egy a számos
-közül](http://cs.pub.ro/~apc/2003/resources/pthreads/uguide/document.htm). A
+közül](https://computing.llnl.gov/tutorials/pthreads/). A
 man is használható a _pthread_ címszavaknál. Magam is a man oldalak alapján
 dolgozom, pl.
 
@@ -3287,7 +3289,7 @@ volna. A program azonban szándékosan el van rontva, ki van kommentezve a
     
     
 
-A mutex (_mut _ually _ex _clusive) olyan dolog, amit lockolni (zárolni,
+A mutex (_mutually exclusive_) olyan dolog, amit lockolni (zárolni,
 megfogni) és unlockolni (elengedni) lehet. A lényeg, hogy egyszerre legfeljebb
 egy szál foghatja a mutexet. Amíg egy szál fogva tartja, addig a többi szálból
 meghívott `thread_mutex_lock` vár a mutex felszabadulására. A mutex
@@ -3391,7 +3393,7 @@ thread kilépését.
 A példa fő tanulsága, hogyan várunk arra `main`-ben, hogy a `level` változó (a
 többi szál tevékenységének következtében) lecsökkenjen egy kívánt értékre. A
 program elején egy mutex és egy cond objektumot hoztunk létre. Általában egy
-cond (_cond _ition) objektumot mindig egy mutexszel együtt használunk.
+cond  (_condition_) objektumot mindig egy mutexszel együtt használunk.
 
 Az alábbi kódrészletben a `thread_cond_wait(cond,mutex)` híváskor `mutex`-nek
 lockolva kell lennie. A `thread_cond_wait` automatikusan elengedi a mutexet,
@@ -3548,7 +3550,7 @@ egy folyamatosan futó tesztprogramot átlagosan hetente akaszt meg...
 Szerencsére ilyen eset már évek óta nem volt. Mérget azonban nem lehet rá
 venni.
 
-##  9.  Unicode
+##  9.  Unicode<a name="sec9"></a>
 
 ###  9.1.  Unicode támogatás
 
@@ -4018,7 +4020,7 @@ tartalmaz fordítást egyik vagy másik stringre, attól még működni fog a
 program, csak ekkor a fordítással nem rendelkező stringek eredeti szövege
 jelenik meg.
 
-##  A.  Régebbi dokumentációk
+##  A.  Régebbi dokumentációk<a name="secA"></a>
 
 Összegyűjtöttem és belinkeltem néhány régről meglevő dokumentációt.
 

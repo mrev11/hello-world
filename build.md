@@ -3,7 +3,11 @@
 
 _Dr. Vermes Mátyás_
 
-1999. július - 2003. szeptember - 2017. január
+1999\. július - 2003. szeptember - 2017. január
+
+<!---
+Megjegyzés: Az '\' nélküli  "1999. július" lista item volna!
+--->
 
 
 [1  Áttekintés](#attekintes)  
@@ -28,7 +32,7 @@ forráskönyvtárakban talált programokat, megállapítja, hogy azokból milyen
 lib-eket és exe-ket lehet csinálni. Összeveti a források, objectek, lib-ek, exe-k
 dátum/idejét, és elvégzi a szükséges fordítást, linkelést. Build ismeri és
 kezeli az összes olyan forrástípust, ami a CCC környezetben eddig előfordult:
-mnt, cls, msk, pge, asm, c, cpp, lem, lex, prg, így nemcsak Clipper programok
+prg, mnt, msk, pge, c, cpp, lem, lex, stb., így nemcsak Clipper programok
 fordítására képes, hanem pl. lemon és lex programokhoz is megfelel. Valójában a
 Build olyankor is jó szolgálatot tesz, amikor egyáltalán nincs a projektben
 Clipper nyelvű program. Az egész CCC futtatórendszer, könyvtárak, utilityk
@@ -113,7 +117,7 @@ beállítani.
 
 Példa: 
 
-    bapp_unix.b -xpelda
+    bapp_unix_.b -xpelda
 
 Ez a parancs arra utasítja Build-et, hogy a `pelda.prg` forrásprogramból hozza
 létre `pelda.exe`-t úgy, hogy az aktuális directoryban lévő többi forrást
@@ -151,7 +155,7 @@ felhasználja `pelda.exe` elkészítéséhez.
 
 Példa: 
 
-    bapp_unix.b -lpelda
+    bapp_unix_.b -lpelda
 
 Ez a parancs arra utasítja Build-et, hogy készítse el `pelda.lib`-et, amibe 
 be kell venni az aktuális directory minden olyan forrásprogramját, ami nem
@@ -165,7 +169,7 @@ forrást így vagy úgy felhasználja, hogy programot készítsen belőle.
 
 Példa: 
 
-    bapp_unix.b -spelda
+    bapp_unix_.b -spelda
 
 Ez az üzemmód UNIX-on alkalmazható, annyival több a `-l` módnál, hogy elkészül
 a könyvtár osztott változata (so) is.
@@ -174,7 +178,7 @@ a könyvtár osztott változata (so) is.
 
 Példa: 
 
-    bapp_unix.b
+    bapp_unix_.b
 
 Ha az előbbi `-x`, `-l`, `-s` kapcsolók egyikét sem alkalmazzuk, akkor Build
 az aktuális directory minden main-t tartalmazó programjából exe-t készít,
@@ -217,7 +221,10 @@ bonyolultabb esetekben segítenek az alább ismertetett kapcsolók.
 - **`-mMain`**
      Az `-m` kapcsolóval lehet felsorolni a főprogramot tartalmazó forrásmodulokat. 
      A main modulok listája a `,;` karakterekkel lehet elválasztva. A kapcsoló additív. 
-     Az `-m` kapcsolót akkor használjuk, ha a main függvény nem prg típusú forrásban van. Ezzel Build nem Clipper nyelvű programok fordítására is használható. A ppo2cpp program pl. cpp, y és lex típusú forrásokból készül, azaz egyáltalán nincs is a projektben prg.
+     Az `-m` kapcsolót akkor használjuk, ha a main függvény nem prg típusú forrásban van. 
+     Ezzel Build nem Clipper nyelvű programok fordítására is használható. 
+     A ppo2cpp program pl. cpp, lem és lex típusú forrásokból készül, azaz egyáltalán 
+     nincs is a projektben prg.
 
 
 - **`-iIncDir`**
@@ -252,10 +259,16 @@ bonyolultabb esetekben segítenek az alább ismertetett kapcsolók.
      független szintaktikával állítsuk be.
 
 - **`$(name)`**
-     Ha Build a parancssorában `$(name)` alakú kifejezést talál, azt helyettesíti a `getenv(name)` értékkel. Ez lehetővé teszi, hogy a környezeti változó értékét az operációs rendszertől független szintaktikával kapjuk meg.
+     Ha Build a parancssorában `$(name)` alakú kifejezést talál, 
+     azt helyettesíti a `getenv(name)` értékkel. Ez lehetővé teszi, 
+     hogy a környezeti változó értékét az operációs rendszertől független 
+     szintaktikával kapjuk meg.
 
 - **`@parfile`**
-     Parfile egy tetszőleges paraméterfájl, amiben a fent leírt paramétereket helyezhetjük el. A paramétereket a fájlban újsor karakterrel választjuk el. A parancssor és a paraméterfájl olvasása folytatólagos, pl. lehet több paraméterfájl is a parancssorban.
+     Parfile egy tetszőleges paraméterfájl, amiben a fent leírt paramétereket 
+     helyezhetjük el. A paramétereket a fájlban újsor karakterrel választjuk el. 
+     A parancssor és a paraméterfájl olvasása folytatólagos, 
+     pl. lehet több paraméterfájl is a parancssorban.
 
 
 ###  5.2.  Build környezeti változók<a id="param_env"></a>
@@ -359,7 +372,7 @@ Az inkludált `parfile.bld` tartalma pedig:
 
 
 Az `-lmask` opció hatására készülni fog egy könyvtár, amibe belekerül
-az aktuális direktory minden olyan programja, ami nem tartamaz main-t.
+az aktuális directory minden olyan programja, ami nem tartamaz main-t.
 
 Öt darab exe fog linkelődni. Ezek közül kettő (mask és page) fullscreen
 karakteres képernyőkezeléssel működik, másik három (msk2say, msk2pge, msk2wro)

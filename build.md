@@ -77,20 +77,20 @@ könyvtárban találhatók.
 
 
 <table>
-<tr><td> bapp_w320.bat       </td><td> Windows, CCC könyvtár nélkül           </td></tr>
-<tr><td> bapp_w32_.bat       </td><td> Windows konzol, képernyőkezelés nélkül </td></tr>
-<tr><td> bapp_w32c.bat       </td><td> Windows konzol, fullscreen képernyő    </td></tr>
-<tr><td> bapp_w32c_btbtx.bat </td><td> Windows konzol, BTBTX adatbázis        </td></tr>
+<tr><td> bapp_w320.bat       </td><td> Windows, CCC könyvtár nélkül                 </td></tr>
+<tr><td> bapp_w32_.bat       </td><td> Windows konzol, képernyőkezelés nélkül       </td></tr>
+<tr><td> bapp_w32c.bat       </td><td> Windows, karakteres (fullscreen) képernyő    </td></tr>
+<tr><td> bapp_w32c_btbtx.bat </td><td> Windows, karakteres képernyő, BTBTX adatbázis</td></tr>
 </table>
 
   
 #### A Linux, BSD, Solaris platformon használható scriptek:
 
 <table>
-<tr><td> bapp_unix0.b        </td><td> UNIX, CCC könyvtár nélkül                  </td></tr>
-<tr><td> bapp_unix_.b        </td><td> UNIX, képernyőkezelés nélkül               </td></tr>
-<tr><td> bapp_unixc.b        </td><td> UNIX, karakteres (fullscreen) képernyő     </td></tr>
-<tr><td> bapp_unixc_btbtx.b  </td><td> UNIX, karakteres képernyő, BTBTX adatbázis </td></tr> 
+<tr><td> bapp_unix0.b        </td><td> UNIX, CCC könyvtár nélkül                    </td></tr>
+<tr><td> bapp_unix_.b        </td><td> UNIX konzol, képernyőkezelés nélkül          </td></tr>
+<tr><td> bapp_unixc.b        </td><td> UNIX, karakteres (fullscreen) képernyő       </td></tr>
+<tr><td> bapp_unixc_btbtx.b  </td><td> UNIX, karakteres képernyő, BTBTX adatbázis   </td></tr> 
 </table>
   
 <!---
@@ -98,6 +98,31 @@ A dinamikus megjelenítés választás azt jelenti, hogy a program elinduláskor
 felderíti (tipikusan környezeti változók alapján), hogy milyen megjelenítéssel
 (grafikus vagy karakteres) kell működnie.
 --->
+
+A _CCC könyvtár nélkül_ esetben a Build nem linkeli be a projektbe
+a CCC könyvtárakat, azaz nem linkelődik be a CCC futtató rendszer, a veremgép,
+a szemétgyűjtés, stb.. Ezen a módon tudunk közönéges C++, C programokat
+készíteni.
+
+A _konzol, képernyőkezelés nélkül_ esetben egyszerű parancssoros program készül.
+A programok  az stdin-t olvassák, az stdout-ot vagy az stderr-t írják, mindezek
+a megszokott módon átirányíthatók.
+
+A _karakteres (fullscreen) képernyő_ esetben a programnak ugyanúgy megvan
+a lehetősége az stdin, stdout, stderr olvasására/irására, de ezenkívül
+rendelkezik egy ablakkal, amiben fullscreen karakteres műveleteket
+tud végezni, úgymint: pozícionált írás, savescreen, restscreen.
+
+> Megemlítendő, hogy az előbbi ablak megjelenítését nem maga a CCC program
+> végzi, hanem a _CCC terminál_ (egy külön program). A CCC program és a terminál 
+> TCP kapcsolaton keresztül kommunikálnak. Ez a szétválasztás lehetővé teszi,
+> hogy a programfutás és a megjelenítés helyileg elkülönüljön: a szerver és a 
+> terminál-kliens máshol van. Emellett a szerver és a kliens platformja is
+> eltérhet, pl. Linux szerverhez használhatunk Windows klienst.
+> Tulajdonképpen tehát a "rendelkezik egy ablakkal" helyett pontosabban azt kellene
+> írnunk, hogy rendelkezik egy hálózati kapcsolattal, amin keresztül vezérel
+> egy programot, ami a karakteres megjelenítést végzi. 
+
 
 
 A felsorolás közel sem teljes. A minták alapján könnyen lehet készíteni
@@ -375,7 +400,7 @@ Az `-lmask` opció hatására készülni fog egy könyvtár, amibe belekerül
 az aktuális directory minden olyan programja, ami nem tartamaz main-t.
 
 A `BUILD_EXE` változó beállításával megadjuk azt a directoryt, ahová a Build 
-a friss exe-ket tenni fogja, jelen esetben a CCC standard exe directoryját.
+a friss exe-ket tenni fogja, jelen esetben a CCC standard bin directoryját.
 Enélkül az aktuális directoryban jönnének létre az exe-k. 
 A `$(CCCDIR)` és `$(CCCUNAME)` makrókat a Build 
 fogja értelmezni.  A Build egyformán megérti a `\` és `/` elválasztó 
@@ -392,12 +417,12 @@ pedig egyszerű parancssoros program lesz.
 > A -x-re éppen azért van szükség, hogy a Build ne vegye figyelembe a -x-ben 
 > nem felsorolt modulokat. 
 
-A `parfile.bld` paraméterfájl Windowson és Linuxon egyformán megfelel, 
+A `parfile.bld` paraméterfájlt Windowson sem kell megváltoztatni, 
 az `m` script windowsos megfelelője `m.bat`, nagyon hasonló a linuxos változathoz:
     
     @echo off
-    bapp_w32c  -xmask -xpage  @parfile.bld
-    bapp_w32_  -xmsk2say -xmsk2pge -xpge2wro  @parfile.bld
+    call bapp_w32c  -xmask -xpage  @parfile.bld
+    call bapp_w32_  -xmsk2say -xmsk2pge -xpge2wro  @parfile.bld
     
 
 Végeredményben két nagyon rövid, egymáshoz nagyon hasonló scriptet kell csak

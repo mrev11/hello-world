@@ -66,7 +66,7 @@ Links in GitHub:
 
 
 WikiLink Syntax:  
-[[CCC belülről|doc/ccc-belulrol]]    
+[[doc/ccc-belulrol]]    
 [[Programkészítés a Build-del|ccctools/buildp/build]]    
 [[SQL2 1.1 interfész|tools/sql2/sql2]]    
 [[CCC-GTK csatoló|gtk/cccgtk]]    

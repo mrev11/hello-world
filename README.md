@@ -45,3 +45,11 @@ together with Clipper. This way the class libraries have less importance,
 because the infrastructure accesible from C is always available. This is the
 philosophy of CCC.
 
+These documents may be interesting for Hungarian readers:
+
+[CCC belülről](doc/ccc-belulrol)    
+[Programkészítés a Build-del](ccctools/buildp/build)    
+[SQL2 1.1 interfész](tools/sql2/sql2)    
+[CCC-GTK csatoló](gtk/cccgtk)    
+
+

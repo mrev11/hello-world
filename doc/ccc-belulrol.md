@@ -10,18 +10,12 @@ _Dr. Vermes Mátyás_
 [2  Telepítés](#sec2)  
 [3  Hello World](#sec3)    
 [4  Változók](#sec4)  
-[5  Függvényhívás](#sec5) 
+[5  Függvényhívás](#sec5)   
 [6  Objektumok](#sec6)  
 [7  Kivételkezelés](#sec7)  
 [8  Többszálúság](#sec8)  
 [9  Unicode](#sec9)  
 [A  Régebbi dokumentációk](#secA)  
-    A.1  [Eredeti Clipper doksi](http://ccc.comfirm.hu/pub/ng)   
-    A.2  [CCC projekt manager](http://ccc.comfirm.hu/ccc3/build.html)   
-    A.3  [Jáva terminál](http://ccc.comfirm.hu/ccc3/jterminal.html)   
-    A.4  [SQL2 interfész](http://ccc.comfirm.hu/ccc3/sql2.html)   
-    A.5  [GTK interfész](http://ccc.comfirm.hu/ccc3/cccgtk.html)   
-
 
 
 ##  1.  Bevezetés<a name="sec1"></a>
@@ -4024,7 +4018,7 @@ jelenik meg.
 
 Összegyűjtöttem és belinkeltem néhány régről meglevő dokumentációt.
 
-###  A.1.   [Eredeti Clipper doksi](http://ccc.comfirm.hu/pub/ng)
+[Eredeti Clipper doksi](http://ccc.comfirm.hu/pub/ng)
 
 Még mindig használható az eredeti [ Clipper 5.x dokumentációjának
 HTML](http://ccc.comfirm.hu/pub/ng) változata. Persze tudni kell, mik az
@@ -4068,13 +4062,5 @@ Az `#error` és `#stdout` kivételével minden.
 
 Ezek vannak: `getactive()`, `getapplykey()`, `getpostvalidate()`,
 `getprevalidate()`, `getreader()`.
-
-###  A.2.   [CCC projekt manager](http://ccc.comfirm.hu/ccc3/build.html)
-
-###  A.3.   [Jáva terminál](http://ccc.comfirm.hu/ccc3/jterminal.html)
-
-###  A.4.   [SQL2 interfész](http://ccc.comfirm.hu/ccc3/sql2.html)
-
-###  A.5.   [GTK interfész](http://ccc.comfirm.hu/ccc3/cccgtk.html)
 
 

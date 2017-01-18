@@ -38,11 +38,16 @@ Build olyankor is jó szolgálatot tesz, amikor egyáltalán nincs a projektben
 Clipper nyelvű program. Az egész CCC futtatórendszer, könyvtárak, utilityk
 (köztük maga a Build) fordítását is a Build vezérli.
 
-Kiemelem, hogy a támogatott platformokon (Windows, Linux, BSD, Solaris)
-ugyanazt a makerendszert használjuk, ráadásul platformváltáskor nincs szükség
+> Az egyszerű használathoz nem szükséges tudni róla, de megemlítem, hogy 
+> a Build újabb változata párhuzamosítja a fordítási müveleteket, így a most 
+> elterjedt többmagos gépeken a nagy projektek fordítása lényegesen felgyorsult.
+
+A támogatott platformokon (Windows, Linux, BSD, Solaris)
+ugyanazt a makerendszert használjuk. Platformváltáskor nincs szükség
 a források konverziójára, hanem egyszerűen átmásoljuk a projektet tartalmazó
 directory struktúrát egyik gépről a másikra. A Build nem keveri össze
 különböző fordítókkal készített, különböző platformra szánt binárisokat.
+
 
 
 ##  2.  Implicit fordítási szabályok<a id="implicit"></a>
@@ -117,9 +122,9 @@ tud végezni, úgymint: pozícionált írás, savescreen, restscreen.
 > végzi, hanem a _CCC terminál_ (egy külön program). A CCC program és a terminál 
 > TCP kapcsolaton keresztül kommunikálnak. Ez a szétválasztás lehetővé teszi,
 > hogy a programfutás és a megjelenítés helyileg elkülönüljön: a szerver és a 
-> terminál-kliens máshol van. Emellett a szerver és a kliens platformja is
+> terminál-kliens máshol legyen. Emellett a szerver és a kliens platformja is
 > eltérhet, pl. Linux szerverhez használhatunk Windows klienst.
-> Tulajdonképpen tehát a "rendelkezik egy ablakkal" helyett pontosabban azt kellene
+> Tulajdonképpen tehát a "rendelkezik egy ablakkal" helyett pontosabb volna azt
 > írnunk, hogy rendelkezik egy hálózati kapcsolattal, amin keresztül vezérel
 > egy programot, ami a karakteres megjelenítést végzi. 
 
@@ -431,4 +436,7 @@ az adott direktoriban fellelhető összes program. Így működik a Build.
 További példák sokasága található a CCC directory struktúrában, ahol minden
 projekt, beleértve a runtime libraryk fordítását, a prg forrást egyáltalán nem
 tartalmazó programok fordítását a Build-del készül.
+
+
+
 

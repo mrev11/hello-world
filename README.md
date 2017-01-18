@@ -47,9 +47,20 @@ philosophy of CCC.
 
 These documents may be interesting for Hungarian readers:
 
+
+Links in Gollum:
+
 [CCC belülről](doc/ccc-belulrol)    
 [Programkészítés a Build-del](ccctools/buildp/build)    
 [SQL2 1.1 interfész](tools/sql2/sql2)    
 [CCC-GTK csatoló](gtk/cccgtk)    
+
+
+Links in GitHub:
+
+[CCC belülről](doc/ccc-belulrol.md)    
+[Programkészítés a Build-del](ccctools/buildp/build.md)    
+[SQL2 1.1 interfész](tools/sql2/sql2.md)    
+[CCC-GTK csatoló](gtk/cccgtk.md)    
 
 

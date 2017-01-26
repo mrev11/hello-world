@@ -49,20 +49,21 @@ These documents may be interesting for Hungarian readers
 (it is annoying, that do not exist a common solution for Gollum and GitHub):
 
 
-Links in GitHub:    
+Links in GitHub (do not work in Gollum):    
 [CCC belülről](doc/ccc-belulrol.md)    
 [Programkészítés a Build-del](ccctools/buildp/build.md)    
 [SQL2 1.1 interfész](tools/sql2/sql2.md)    
 [CCC-GTK csatoló](gtk/cccgtk.md)    
 
 
-Links in Gollum:    
+Links in Gollum (do not work in GitHub):    
 [CCC belülről](doc/ccc-belulrol)    
 [Programkészítés a Build-del](ccctools/buildp/build)    
 [SQL2 1.1 interfész](tools/sql2/sql2)    
 [CCC-GTK csatoló](gtk/cccgtk)    
 
-WikiLink Syntax:  
+
+WikiLink Syntax (do not work in GitHub):  
 [[CCC belülről|doc/ccc-belulrol]]    
 [[Programkészítés a Build-del|ccctools/buildp/build]]    
 [[SQL2 1.1 interfész|tools/sql2/sql2]]    

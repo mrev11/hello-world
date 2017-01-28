@@ -49,21 +49,25 @@ These documents may be interesting for Hungarian readers
 (it is annoying, that do not exist a common solution for Gollum and GitHub):
 
 
-Links in GitHub (do not work in Gollum):    
+
+Links in GitHub (File URLs with the normal `.md` extension. 
+Such links work in GitHub but do not work in Gollum.):    
 [CCC belülről](doc/ccc-belulrol.md)    
 [Programkészítés a Build-del](ccctools/buildp/build.md)    
 [SQL2 1.1 interfész](tools/sql2/sql2.md)    
 [CCC-GTK csatoló](gtk/cccgtk.md)    
 
 
-Links in Gollum (do not work in GitHub):    
+Links in Gollum (File URLs without extension. These links work
+in local Gollum but do not work in GitHub):    
 [CCC belülről](doc/ccc-belulrol)    
 [Programkészítés a Build-del](ccctools/buildp/build)    
 [SQL2 1.1 interfész](tools/sql2/sql2)    
 [CCC-GTK csatoló](gtk/cccgtk)    
 
 
-WikiLink Syntax (do not work in GitHub):  
+WikiLink Syntax (These links work in local Gollum,
+but this syntax is not known by GitHub at all):  
 [[CCC belülről|doc/ccc-belulrol]]    
 [[Programkészítés a Build-del|ccctools/buildp/build]]    
 [[SQL2 1.1 interfész|tools/sql2/sql2]]    

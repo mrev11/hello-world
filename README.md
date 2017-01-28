@@ -59,8 +59,8 @@ Such links work in GitHub but do not work in Gollum.):
 [CCC-GTK csatoló](gtk/cccgtk.md)    
 
 
-Links in Gollum (File URLs without exrension. These links work
-in local Gollum but do not work in GitHub(:    
+Links in Gollum (File URLs without extension. These links work
+in local Gollum but do not work in GitHub):    
 [CCC belülről](doc/ccc-belulrol)    
 [Programkészítés a Build-del](ccctools/buildp/build)    
 [SQL2 1.1 interfész](tools/sql2/sql2)    
